@@ -1,0 +1,20 @@
+{
+  "name": "oo-tools",
+  "description": "Oolymer tools",
+  "version": "0.0.0",
+  "author": "Benjamin Gudehus <benjamin.gudehus@canoo.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oolymer/oo-tools.git"
+  },
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "polymer-analyzer": "3.0.0-pre.13",
+    "ts-node": "5.0.1",
+    "typescript": "2.7.2"
+  },
+  "scripts": {
+    "start": "./node_modules/.bin/ts-node index.ts"
+  }
+}
