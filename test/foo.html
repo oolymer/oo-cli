@@ -1,0 +1,38 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="foo-page">
+
+  <template>
+
+  </template>
+
+  <script>
+    /**
+     * this is **foopage**.
+     *
+     * ```html
+     * <foo-page></foo-page>
+     * ```
+     */
+    class FooPage extends Polymer.Element {
+
+      static get is() {
+        return "foo-page"
+      }
+
+      static get properties() {
+        return {
+          bar: String
+        }
+      }
+
+      bar() {
+        return bar
+      }
+
+    }
+
+    window.customElements.define(FooPage.is, FooPage)
+  </script>
+
+</dom-module>
