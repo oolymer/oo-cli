@@ -10,6 +10,7 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
+    "@polymer/polymer": "2.5.0",
     "polymer-analyzer": "3.0.0-pre.13",
     "ts-node": "5.0.1",
     "typescript": "2.7.2"

@@ -1,35 +1,38 @@
-<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../node_modules/@polymer/polymer/polymer-element.html">
+<link rel="import" href="./foo-mixin.html">
 
 <dom-module id="foo-page">
 
   <template>
-
+    <slot>
+    </slot>
   </template>
 
   <script>
     /**
-     * this is **foopage**.
+     * This is **FooPage**.
      *
      * ```html
      * <foo-page></foo-page>
      * ```
+     *
+     * @customElement
+     * @polymer
      */
-    class FooPage extends Polymer.Element {
-
+    class FooPage extends Foo.Mixin(Polymer.Element) {
       static get is() {
         return "foo-page"
       }
 
       static get properties() {
         return {
-          bar: String
+          quux: String
         }
       }
 
-      bar() {
-        return bar
+      quux() {
+        return quux
       }
-
     }
 
     window.customElements.define(FooPage.is, FooPage)

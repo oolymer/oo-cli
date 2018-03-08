@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+"@polymer/polymer@2.5.0":
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/@polymer/polymer/-/polymer-2.5.0.tgz#261439f5ab691c230d0c5dfb518b9247064ac13d"
+
 "@types/babel-generator@^6.25.1":
   version "6.25.1"
   resolved "https://registry.yarnpkg.com/@types/babel-generator/-/babel-generator-6.25.1.tgz#f86ab3cf132b04597fe6c431d3083aaf1b76b530"

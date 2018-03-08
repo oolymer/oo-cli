@@ -1,0 +1,25 @@
+<link rel="import" href="../node_modules/@polymer/polymer/lib/utils/boot.html">
+<link rel="import" href="../node_modules/@polymer/polymer/lib/utils/mixin.html">
+
+<script>
+  (function () {
+
+    // Declare global namespace.
+    window.Foo = window.Foo || {}
+
+    /**
+     * A custom element class mixin that provides a collection of utility methods.
+     *
+     * @polymerMixin
+     * @memberof Foo
+     */
+    Foo.Mixin = Polymer.dedupingMixin(superClass => {
+      /**
+       * @polymerMixinClass
+       */
+      return class Mixin extends superClass {
+      }
+    })
+
+  }())
+</script>
