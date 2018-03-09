@@ -24,4 +24,4 @@ before_script:
 
 # run npm scripts.
 script:
-  - npm start
+  - oo ./

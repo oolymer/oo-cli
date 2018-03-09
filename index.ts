@@ -1,5 +1,8 @@
+import fs from "fs"
+import { join } from "path"
+import chalk from "chalk"
+import meow from "meow"
 import { Analyzer, generateAnalysis } from "polymer-analyzer"
-import { writeFileSync } from "fs"
 
 if (require.main === module) {
   main().catch(error => {
@@ -9,7 +12,29 @@ if (require.main === module) {
 }
 
 export async function main() {
-  const path = process.argv[2] || "test/"
+  const help = `
+    Usage
+      $ oo [directory]
+
+    Examples
+      $ oo .
+  `
+
+  const cli = meow(help, {})
+
+  if (cli.input.length < 2) {
+    cli.showHelp(0)
+  }
+  else {
+    console.log(chalk.green("*** " + (cli.pkg as any).name + " ***"))
+    console.log("")
+
+    const path = join(cli.input[0], cli.input[1])
+    await analyze(path)
+  }
+}
+
+export async function analyze(path: string) {
   const analyzer = Analyzer.createForDirectory(path)
   const input = await analyzer.analyzePackage()
   const result = generateAnalysis(input, analyzer.urlResolver)
@@ -42,5 +67,5 @@ export async function main() {
   }
 
   console.log(lines.join("\n"))
-  writeFileSync("test/output.md", lines.join("\n"))
+  fs.writeFileSync("test/output.md", lines.join("\n"))
 }

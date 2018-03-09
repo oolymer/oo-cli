@@ -1,6 +1,6 @@
 {
   "name": "oo-tools",
-  "description": "Oolymer tools",
+  "description": "oo-tools",
   "version": "0.0.0",
   "author": "Benjamin Gudehus <benjamin.gudehus@canoo.com>",
   "repository": {
@@ -9,9 +9,15 @@
   },
   "license": "MIT",
   "private": true,
+  "dependencies": {
+    "chalk": "2.3.2",
+    "meow": "4.0.0",
+    "polymer-analyzer": "3.0.0-pre.13"
+  },
   "devDependencies": {
     "@polymer/polymer": "2.5.0",
-    "polymer-analyzer": "3.0.0-pre.13",
+    "@types/chalk": "2.2.0",
+    "@types/meow": "4.0.1",
     "ts-node": "5.0.1",
     "typescript": "2.7.2"
   },

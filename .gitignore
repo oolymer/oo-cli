@@ -3,6 +3,7 @@ build/
 
 # project files.
 .idea/
+.vscode/
 
 # dependencies.
 bower_components/
