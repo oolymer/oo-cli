@@ -1,5 +1,6 @@
 ## FooPage
-*(element defined in foo-page.html)*
+
+*(element defined in test/foo-page.html)*
 
 A custom element with **properties** and **methods**.
 
@@ -8,6 +9,7 @@ A custom element with **properties** and **methods**.
 ```
 
 ## Foo.Mixin
-*(mixin defined in foo-mixin.html)*
+
+*(mixin defined in test/foo-mixin.html)*
 
 A custom element class mixin that provides a collection of utility methods.
