@@ -1,11 +1,11 @@
 {
-  "name": "oo-tools",
-  "description": "oo-tools",
+  "name": "oo-cli",
+  "description": "oolymer command line tools",
   "version": "0.0.0",
   "author": "Benjamin Gudehus <benjamin.gudehus@canoo.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/oolymer/oo-tools.git"
+    "url": "https://github.com/oolymer/oo-cli.git"
   },
   "license": "MIT",
   "private": true,
@@ -20,6 +20,9 @@
     "@types/meow": "4.0.1",
     "ts-node": "5.0.1",
     "typescript": "2.7.2"
+  },
+  "bin": {
+    "oo": "bin/oo.js"
   },
   "scripts": {
     "start": "./node_modules/.bin/ts-node index.ts"

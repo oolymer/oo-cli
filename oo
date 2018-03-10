@@ -1,4 +1,0 @@
-#!/bin/sh
-path=`pwd`
-script_path=`dirname $(readlink $0)`
-yarn --cwd $script_path start $path "$@"

@@ -24,4 +24,5 @@ before_script:
 
 # run npm scripts.
 script:
-  - ./oo ./
+  - npm link
+  - oo ./
