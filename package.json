@@ -16,13 +16,13 @@
   },
   "devDependencies": {
     "@polymer/polymer": "2.5.0",
-    "@types/chalk": "2.2.0",
     "@types/jest": "22.2.0",
     "@types/meow": "4.0.1",
     "@types/pixelmatch": "4.0.0",
     "@types/puppeteer": "1.1.0",
     "jest": "22.4.2",
     "pixelmatch": "4.0.2",
+    "prettier": "1.11.1",
     "puppeteer": "1.1.1",
     "ts-node": "5.0.1",
     "typescript": "2.7.2"
@@ -31,6 +31,15 @@
     "oo": "bin/oo.js"
   },
   "scripts": {
-    "start": "./node_modules/.bin/ts-node index.ts"
+    "start": "./node_modules/.bin/ts-node index.ts",
+    "format": "./node_modules/.bin/prettier --write \"{*.ts,{bin,test}/**/*.{js,ts}}\""
+  },
+  "prettier": {
+    "bracketSpacing": true,
+    "printWidth": 100,
+    "semi": false,
+    "singleQuote": false,
+    "tabWidth": 2,
+    "useTabs": false
   }
 }

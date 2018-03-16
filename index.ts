@@ -4,13 +4,17 @@ import meow from "meow"
 import { Analyzer, generateAnalysis } from "polymer-analyzer"
 
 if (require.main === module) {
-  main().catch(error => {
+  main()
+}
+
+export function main() {
+  cli().catch(error => {
     console.error(error.stack || error.message || error)
     process.exit(1)
   })
 }
 
-export async function main() {
+export async function cli() {
   const help = `
     Usage
       $ oo [directory]
@@ -23,8 +27,7 @@ export async function main() {
 
   if (cli.input.length === 0) {
     cli.showHelp(0)
-  }
-  else {
+  } else {
     console.log(chalk.green("*** " + (cli.pkg as any).description + " ***"))
     console.log("")
 
