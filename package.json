@@ -35,7 +35,7 @@
     "start": "./node_modules/.bin/ts-node index.ts",
     "format": "./node_modules/.bin/prettier --write \"{*.ts,{bin,test}/**/*.{js,ts}}\"",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watchAll"
   },
   "jest": {
     "testEnvironment": "node",

@@ -27,16 +27,19 @@ export async function cli() {
 
   if (cli.input.length === 0) {
     cli.showHelp(0)
-  } else {
+  }
+  else {
     console.log(chalk.green("*** " + (cli.pkg as any).description + " ***"))
     console.log("")
 
     const path = cli.input[0]
-    await analyze(path)
+    const result = await analyze(path)
+    console.log(result)
+    fs.writeFileSync("analysis.md", result)
   }
 }
 
-export async function analyze(path: string) {
+export async function analyze(path: string): Promise<string> {
   const analyzer = Analyzer.createForDirectory(path)
   const input = await analyzer.analyzePackage()
   const result = generateAnalysis(input, analyzer.urlResolver)
@@ -72,6 +75,5 @@ export async function analyze(path: string) {
     })
   }
 
-  console.log(lines.join("\n"))
-  fs.writeFileSync("test/output.md", lines.join("\n"))
+  return lines.join("\n")
 }
