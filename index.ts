@@ -2,6 +2,7 @@ import fs from "fs"
 import chalk from "chalk"
 import meow from "meow"
 import { Analyzer, generateAnalysis } from "polymer-analyzer"
+import { FsUrlLoader, PackageUrlResolver } from "polymer-analyzer"
 
 if (require.main === module) {
   main()
@@ -40,7 +41,7 @@ export async function cli() {
 }
 
 export async function analyze(path: string): Promise<string> {
-  const analyzer = Analyzer.createForDirectory(path)
+  const analyzer = createForDirectory(path)
   const input = await analyzer.analyzePackage()
   const result = generateAnalysis(input, analyzer.urlResolver)
 
@@ -76,4 +77,11 @@ export async function analyze(path: string): Promise<string> {
   }
 
   return lines.join("\n")
+}
+
+export function createForDirectory(dirname: string): Analyzer {
+  return new Analyzer({
+    urlLoader: new FsUrlLoader(dirname),
+    urlResolver: new PackageUrlResolver({ packageDir: dirname })
+  })
 }
