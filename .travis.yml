@@ -20,10 +20,10 @@ before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3
-  - npm install
+  - yarn install
 
 # run npm scripts.
 script:
-  - npm test
-  - npm link
+  - yarn test
+  - yarn link
   - oo ./
